@@ -1,7 +1,7 @@
 const express = require('express')
 
-const OngController = require('./controllers/OngController')
-const IncidentController = require('./controllers/IncidentController')
+const OrgController = require('./controllers/OrgController')
+const ActionController = require('./controllers/ActionController')
 const ProfileController = require('./controllers/ProfileController')
 const SessionController = require('./controllers/SessionController')
 
@@ -27,14 +27,14 @@ const routes = express.Router()
 
   routes.post('/sessions', SessionController.create) // Rota responsável por acessar o método de login na aplicação (Criação de uma nova sessão de login)
 
-  routes.get('/ongs', OngController.index) // Acessando método INDEX na rota de listagem de ONGS
-  routes.post('/ongs', OngController.create) // Acessando método CREATE na rota de cadastro de ONGS
+  routes.get('/orgs', OrgController.index) // Acessando método INDEX na rota de listagem de ONGS
+  routes.post('/orgs', OrgController.create) // Acessando método CREATE na rota de cadastro de ONGS
 
   routes.get('/profile', ProfileController.index) // Acessando método que lista casos de uma ONG específica
 
-  routes.get('/incidents', IncidentController.index) // Acessando método INDEX na rota de cadastro de CASOS
-  routes.post('/incidents', IncidentController.create) // Acessando método CREATE na rota de cadastro de CASOS
+  routes.get('/actions', ActionController.index) // Acessando método INDEX na rota de cadastro de CASOS
+  routes.post('/actions', ActionController.create) // Acessando método CREATE na rota de cadastro de CASOS
 
-  routes.delete('/incidents/:id', IncidentController.delete) // Acessando método DELETE na rota de cadastro de CASOS
+  routes.delete('/actions/:id', ActionController.delete) // Acessando método DELETE na rota de cadastro de CASOS
 
 module.exports = routes
